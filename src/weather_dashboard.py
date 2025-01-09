@@ -2,6 +2,7 @@ import os
 import json
 import boto3
 import requests
+import csv
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -70,18 +71,42 @@ class WeatherDashboard:
             print(f"Error saving to S3: {e}")
             return False
 
+def save_to_csv(weather_data, city):
+    """Append weather data to a local CSV file."""
+    if not weather_data:
+        return
+
+    file_exists = os.path.isfile('weather_data.csv')
+    with open('weather_data.csv', mode='a', newline='') as csv_file:
+        fieldnames = ['city', 'temp', 'feels_like', 'humidity', 'description', 'timestamp']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+        # Write header only if file doesn't exist
+        if not file_exists:
+            writer.writeheader()
+
+        row = {
+            'city': city,
+            'temp': weather_data['main']['temp'],
+            'feels_like': weather_data['main']['feels_like'],
+            'humidity': weather_data['main']['humidity'],
+            'description': weather_data['weather'][0]['description'],
+            'timestamp': weather_data['timestamp']
+        }
+        writer.writerow(row)
+
 def main():
     dashboard = WeatherDashboard()
-    
     # Create bucket if needed
     dashboard.create_bucket_if_not_exists()
     
-    cities = ["Philadelphia", "Seattle", "New York"]
+    cities = ["Philadelphia", "Seattle", "New York", "Birmingham", "London", "Manchester", "Derby"]
     
     for city in cities:
         print(f"\nFetching weather for {city}...")
         weather_data = dashboard.fetch_weather(city)
         if weather_data:
+            # Print weather details
             temp = weather_data['main']['temp']
             feels_like = weather_data['main']['feels_like']
             humidity = weather_data['main']['humidity']
@@ -96,6 +121,11 @@ def main():
             success = dashboard.save_to_s3(weather_data, city)
             if success:
                 print(f"Weather data for {city} saved to S3!")
+
+            # ALSO save to CSV
+            save_to_csv(weather_data, city)
+            print(f"Weather data for {city} saved to CSV!\n")
+            
         else:
             print(f"Failed to fetch weather data for {city}")
 

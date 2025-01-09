@@ -1,0 +1,10 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/kubernetes": [
+            "k8s/*.yaml"
+        ],
+        "https://json.schemastore.org/github-workflow": [
+            ".github/workflows/*.yaml"
+        ]
+    }
+}

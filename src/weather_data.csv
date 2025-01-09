@@ -1,0 +1,36 @@
+city,temp,feels_like,humidity,description,timestamp
+Philadelphia,21.97,9.37,51,clear sky,20250109-034023
+Seattle,45.25,40.46,93,broken clouds,20250109-034023
+New York,23.22,10.62,52,overcast clouds,20250109-034023
+Birmingham,28.56,22.35,68,clear sky,20250109-034024
+London,34.38,29.07,92,light rain,20250109-034024
+Manchester,21.18,21.18,94,fog,20250109-034024
+Derby,26.96,21.56,86,clear sky,20250109-034025
+Philadelphia,21.52,8.92,53,clear sky,20250109-040323
+Seattle,45.21,40.41,92,broken clouds,20250109-040323
+New York,23.18,10.58,52,scattered clouds,20250109-040323
+Birmingham,28.26,23.07,67,clear sky,20250109-040323
+London,34.41,28.4,93,light snow,20250109-040323
+Manchester,21.18,21.18,91,fog,20250109-040323
+Derby,25.99,20.86,82,few clouds,20250109-040324
+Philadelphia,21.52,8.92,53,clear sky,20250109-040328
+Seattle,45.21,40.41,92,broken clouds,20250109-040328
+New York,23.18,10.58,52,scattered clouds,20250109-040328
+Birmingham,28.26,23.07,67,clear sky,20250109-040328
+London,34.41,28.4,93,light snow,20250109-040329
+Manchester,21.18,21.18,91,fog,20250109-040329
+Derby,25.99,20.86,82,few clouds,20250109-040329
+Philadelphia,21.52,8.92,53,clear sky,20250109-040334
+Seattle,45.21,40.41,92,broken clouds,20250109-040335
+New York,23.18,10.58,52,scattered clouds,20250109-040335
+Birmingham,28.26,23.07,67,clear sky,20250109-040335
+London,34.41,28.4,93,light snow,20250109-040335
+Manchester,21.18,21.18,91,fog,20250109-040335
+Derby,25.99,20.86,82,few clouds,20250109-040335
+Philadelphia,20.95,8.35,54,clear sky,20250109-050712
+Seattle,44.87,41.7,92,overcast clouds,20250109-050712
+New York,22.55,9.95,53,few clouds,20250109-050712
+Birmingham,27.27,19.85,68,clear sky,20250109-050712
+London,34.56,30.07,93,few clouds,20250109-050713
+Manchester,19.89,19.89,91,fog,20250109-050713
+Derby,24.48,17.49,86,clear sky,20250109-050713
